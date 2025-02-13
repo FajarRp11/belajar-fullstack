@@ -45,7 +45,7 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/pengalaman/user', [PengalamanController::class, 'getPengalaman']);
     Route::post('/pengalaman/store', [PengalamanController::class, 'createPengalaman']);
-    Route::get('/riwayat-pendidikan/edit/{id}', [RiwayatPendidikanController::class, 'edit']);
-    Route::put('/riwayat-pendidikan/update/{id}', [RiwayatPendidikanController::class, 'update']);
-    Route::delete('/riwayat-pendidikan/delete/{id}', [RiwayatPendidikanController::class, 'destroy']);
+    Route::get('/pengalaman/edit/{id}', [PengalamanController::class, 'getSinglePengalaman']);
+    Route::put('/pengalaman/update/{id}', [PengalamanController::class, 'updatePengalaman']);
+    Route::delete('/pengalaman/delete/{id}', [PengalamanController::class, 'deletePengalaman']);
 });

@@ -84,8 +84,6 @@ async function submitForm(event) {
     };
 
     try {
-        console.log("Sending data:", newEducation); // Untuk debugging
-
         const response = await fetch(
             "http://belajar-api.test/api/riwayat-pendidikan/store",
             {
