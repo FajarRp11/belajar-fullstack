@@ -223,26 +223,74 @@ async function handleSubmit(event) {
     modal.classList.remove("flex");
 }
 
+document.addEventListener("DOMContentLoaded", loadEducation);
+
+// Hapus event listener lama
+document.addEventListener("DOMContentLoaded", function () {
+    // Event delegation untuk tombol delete
+    document.addEventListener("click", function (e) {
+        if (e.target.classList.contains("delete-btn")) {
+            const id = e.target.dataset.id;
+            console.log("Delete clicked for ID:", id); // Debug
+            openDeleteModal(id);
+        }
+    });
+
+    // Load initial data
+    loadEducation();
+});
+
 function openDeleteModal(id) {
+    console.log("Opening modal for ID:", id); // Debug
     const modal = document.getElementById("delete-modal");
     modal.classList.remove("hidden");
     modal.classList.add("flex");
     modal.dataset.educationId = id;
 }
 
-document.querySelector("#delete-modal-hide").addEventListener("click", () => {
-    const modal = document.getElementById("delete-modal");
-    modal.classList.add("hidden");
-    modal.classList.remove("flex");
-});
-
-// Juga tambahkan untuk tombol "No, cancel"
+// Event listener untuk tombol confirm delete
 document
-    .querySelector("#delete-modal button:last-child")
-    .addEventListener("click", () => {
-        const modal = document.getElementById("delete-modal");
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
-    });
+    .getElementById("confirm-delete")
+    .addEventListener("click", async function () {
+        try {
+            const modal = document.getElementById("delete-modal");
+            const id = modal.dataset.educationId;
+            console.log("Deleting ID:", id); // Debug
 
-document.addEventListener("DOMContentLoaded", loadEducation);
+            const authToken = localStorage.getItem("authToken");
+
+            // Disable tombol saat proses
+            this.disabled = true;
+
+            const response = await fetch(
+                `http://belajar-api.test/api/riwayat-pendidikan/delete/${id}`,
+                {
+                    method: "DELETE",
+                    headers: {
+                        Authorization: "Bearer " + authToken,
+                        Accept: "application/json",
+                    },
+                }
+            );
+
+            const data = await response.json();
+            console.log("Response:", data); // Debug
+
+            if (!response.ok) {
+                throw new Error(
+                    data.message || "Terjadi kesalahan saat menghapus data"
+                );
+            }
+
+            await loadEducation();
+            alert("Berhasil menghapus data pendidikan");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+        } catch (error) {
+            console.error("Error:", error);
+            alert(error.message);
+        } finally {
+            // Enable kembali tombol
+            this.disabled = false;
+        }
+    });

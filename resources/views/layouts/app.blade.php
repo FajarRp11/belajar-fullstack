@@ -8,5 +8,7 @@
   <body>
     <x-navbar></x-navbar>
     {{ $slot }}
+
+    <script src="{{ asset('js/app.js') }}"></script>
   </body>
 </html>

@@ -7,5 +7,7 @@
   </head>
   <body>
     {{ $slot }}
+
+    <script src="{{ asset('app.js') }}"></script>
   </body>
 </html>
