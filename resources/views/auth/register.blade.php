@@ -1,4 +1,4 @@
-<x-main-layout>
+<x-guest-layout>
     <div class="h-screen w-full flex justify-center items-center">
         <div class="bg-white border flex flex-col justify-center items-center gap-4 px-6 rounded-xl py-4 shadow-md">
             <h1 class="text-3xl font-bold text-center text-black">REGISTER</h1>
@@ -33,4 +33,4 @@
     </script>
 
     <script src="{{ asset('js/register.js') }}"></script>
-</x-main-layout>
+</x-guest-layout>

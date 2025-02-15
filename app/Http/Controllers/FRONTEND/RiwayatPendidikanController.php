@@ -9,6 +9,6 @@ class RiwayatPendidikanController extends Controller
 {
     public function riwayatPendidikan()
     {
-        return view('riwayat-pendidikan.index');
+        return view('admin.riwayat-pendidikan.index');
     }
 }

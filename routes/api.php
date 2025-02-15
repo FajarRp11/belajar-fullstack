@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\BiodataController;
 use App\Http\Controllers\API\PengalamanController;
+use App\Http\Controllers\API\PortfolioController;
 use App\Http\Controllers\API\RiwayatPendidikanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -10,6 +11,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
+Route::get('/portfolio', [PortfolioController::class, 'getAllUser']);
+Route::get('/portfolio/user/{username}', [PortfolioController::class, 'getAllUserInfo']);
 
 // Route autentikasi
 Route::post('/register', [AuthController::class, 'register']);

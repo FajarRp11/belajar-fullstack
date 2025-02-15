@@ -36,12 +36,28 @@ async function loadUserData() {
     }
 }
 
+function formatDate(dateString) {
+    if (!dateString) return "Tanggal lahir tidak tersedia";
+
+    const date = new Date(dateString);
+
+    // Cek apakah tanggal valid
+    if (isNaN(date.getTime())) return "Format tanggal tidak valid";
+
+    // Ambil tanggal, bulan, dan tahun
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // +1 karena bulan dimulai dari 0
+    const year = date.getFullYear();
+
+    return `${day}-${month}-${year}`;
+}
+
 function updateProfil(data) {
     document.getElementById("name").textContent =
         data.name || "Nama tidak tersedia";
     document.getElementById("profileImage").src = data.foto || profileImage;
     document.getElementById("tanggal_lahir").textContent =
-        data.tanggal_lahir || "Tanggal lahir tidak tersedia";
+        formatDate(data.tanggal_lahir) || "Tanggal lahir tidak tersedia";
     document.getElementById("email").textContent =
         data.email || "Email tidak tersedia";
     document.getElementById("phone").textContent =

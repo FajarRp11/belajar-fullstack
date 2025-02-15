@@ -6,8 +6,13 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
   </head>
   <body>
-    {{ $slot }}
+    <x-sidebar></x-sidebar>
+    <div class="lg:ml-64">
+      <div class="container mx-auto">
+          {{ $slot }}
+        </div>
+    </div>
 
-    <script src="{{ asset('app.js') }}"></script>
+    <script src="{{ asset('js/admin.js') }}"></script>
   </body>
 </html>

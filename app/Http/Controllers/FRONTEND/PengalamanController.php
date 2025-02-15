@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class PengalamanController extends Controller
 {
     public function pengalaman() {
-        return view('pengalaman.index');
+        return view('admin.pengalaman.index');
     }
 }

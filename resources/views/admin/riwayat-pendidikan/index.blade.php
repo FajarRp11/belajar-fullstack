@@ -1,8 +1,8 @@
-<x-app-layout>
-    <div class="px-16 mt-4">
+<x-admin-layout>
+    <div class="p-4 pt-16 lg:pt-4">
         <!-- Modal toggle -->
         <button id="open-create-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-4" type="button">
-        Toggle modal
+        Create Data
         </button>
 
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -13,35 +13,34 @@
                             Nama institusi
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Posisi
+                            Jurusan
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Tahun mulai
+                            Tahun masuk
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            Tahun selesai
-                        </th>
-                        <th scope="col" class="px-6 py-3">
-                            Deskripsi
+                            Tahun keluar
                         </th>
                         <th scope="col" class="px-6 py-3">
                             Action
                         </th>
                     </tr>
                 </thead>
-                <tbody id="experience-list">
+                <tbody id="education-list">
                     
                 </tbody>
             </table>
         </div>
-    </div>
-    @include('pengalaman.create')
-    @include('pengalaman.edit')
+    </div> 
 
+    @include('admin.riwayat-pendidikan.create')
+    @include('admin.riwayat-pendidikan.edit')
+    @include('admin.riwayat-pendidikan.delete')
+    {{-- @include('API.pendidikan') --}}
     <script>
         window.routes = {
             login: "{{ route('login') }}"
         };
     </script>
-    <script src="{{ asset('js/pengalaman.js') }}"></script>
-</x-app-layout>
+    <script src="{{ asset('js/pendidikan.js') }}"></script>
+</x-admin-layout>

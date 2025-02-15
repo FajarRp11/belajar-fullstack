@@ -1,5 +1,5 @@
-<x-app-layout>
-    <div class="flex justify-center items-center w-full h-screen">
+<x-admin-layout>
+    <div class="flex justify-center items-center w-full h-screen overflow-hidden">
         <div class="max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden">
             <!-- Profile Image Section -->
             <div class="flex justify-center p-6 bg-gray-50">
@@ -62,4 +62,4 @@
         const profileImage = '{{ asset('images/default.jpeg') }}';
     </script>
     <script src="{{ asset('js/profile.js') }}"></script>
-</x-app-layout>
+</x-admin-layout>

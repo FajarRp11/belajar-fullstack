@@ -1,4 +1,4 @@
-<x-main-layout>
+<x-guest-layout>
     <div class="h-screen w-full flex justify-center items-center relative overflow-hidden">
         <div id="register-alert" class="hidden items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 fixed bottom-0 right-0" role="alert">
             <svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -39,4 +39,4 @@
     <script src="{{ asset('js/login.js') }}"></script>
     <!-- Kemudian load token.js -->
     {{-- <script src="{{ asset('js/token.js') }}"></script> --}}
-</x-main-layout>
+</x-guest-layout>
