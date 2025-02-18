@@ -37,6 +37,7 @@ class PortfolioController extends Controller
         $biodata = Biodata::where('user_id', $user->id)->get();
 
         $data = [
+            'user' => $user->name,
             'biodata' => $biodata,
             'pengalaman' => $pengalaman,
             'pendidikan' => $pendidikan,

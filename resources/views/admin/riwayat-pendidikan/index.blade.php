@@ -42,5 +42,5 @@
             login: "{{ route('login') }}"
         };
     </script>
-    <script src="{{ asset('js/pendidikan.js') }}"></script>
+    <script src="{{ asset('js/admin/pendidikan.js') }}"></script>
 </x-admin-layout>

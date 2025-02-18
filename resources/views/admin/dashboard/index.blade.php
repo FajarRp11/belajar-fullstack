@@ -61,5 +61,5 @@
         };
         const profileImage = '{{ asset('images/default.jpeg') }}';
     </script>
-    <script src="{{ asset('js/profile.js') }}"></script>
+    <script src="{{ asset('js/admin/profile.js') }}"></script>
 </x-admin-layout>

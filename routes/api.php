@@ -5,6 +5,8 @@ use App\Http\Controllers\API\BiodataController;
 use App\Http\Controllers\API\PengalamanController;
 use App\Http\Controllers\API\PortfolioController;
 use App\Http\Controllers\API\RiwayatPendidikanController;
+use App\Http\Controllers\API\SkillsController;
+use App\Models\Skills;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -52,4 +54,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/pengalaman/edit/{id}', [PengalamanController::class, 'getSinglePengalaman']);
     Route::put('/pengalaman/update/{id}', [PengalamanController::class, 'updatePengalaman']);
     Route::delete('/pengalaman/delete/{id}', [PengalamanController::class, 'deletePengalaman']);
+});
+
+Route::middleware('auth:sanctum')->group(function() {
+    Route::get('/skills/user', [SkillsController::class, 'getSkills']);
+    Route::post('/skills/store', [SkillsController::class, 'createSkills']);
+    Route::get('/skills/edit/{id}', [SkillsController::class, 'getSingleSkills']);
 });

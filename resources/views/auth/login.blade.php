@@ -36,7 +36,5 @@
             login: "{{ route('login') }}"
         };
     </script>
-    <script src="{{ asset('js/login.js') }}"></script>
-    <!-- Kemudian load token.js -->
-    {{-- <script src="{{ asset('js/token.js') }}"></script> --}}
+    <script src="{{ asset('js/auth/login.js') }}"></script>
 </x-guest-layout>

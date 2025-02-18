@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
+    public function home() {
+        return view('app.home');
+    }
+
     public function portfolio($username) {
-        return view('app.home', ['username' => $username]);
+        return view('app.portfolio', ['username' => $username]);
     }
 }

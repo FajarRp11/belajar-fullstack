@@ -5,20 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Crypt;
 
-class RiwayatPendidikan extends Model
+class Skills extends Model
 {
     protected $fillable = [
         'user_id',
-        'nama_institusi',
-        'jurusan',
-        "jenjang",
-        "deskripsi",
-        'tahun_masuk',
-        'tahun_lulus'
+        'name',
+        'image',
     ];
 
-    public function user()
-    {
+    public function user() {
         return $this->belongsTo(User::class);
     }
 
@@ -26,5 +21,4 @@ class RiwayatPendidikan extends Model
     {
         return Crypt::encrypt($value);
     }
-
 }

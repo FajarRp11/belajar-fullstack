@@ -103,6 +103,8 @@ class RiwayatPendidikanController extends Controller
         $validate = Validator::make($request->all(), [
            'nama_institusi' => 'required|string|max:255',
             'jurusan' => 'required|string',
+            'jenjang' => 'required|string',
+            'deskripsi' => 'required|string|max:255',
             'tahun_masuk' => 'required|string|numeric',
             'tahun_lulus' => 'required|string|numeric'
         ]);
@@ -119,6 +121,8 @@ class RiwayatPendidikanController extends Controller
         $pendidikan = [
             'nama_institusi' => $request->nama_institusi,
             'jurusan' => $request->jurusan,
+            "jenjang" => $request->jenjang,
+            "deskrips" => $request->deskripsi,
             'tahun_masuk' => $request->tahun_masuk,
             'tahun_lulus' => $request->tahun_lulus
         ];

@@ -28,4 +28,5 @@ Route::get('/pengalaman', [PengalamanController::class, 'pengalaman'])
     ->name('pengalaman.index');
 
 // route guest
+Route::get('/portfolio', [PortfolioController::class, 'home']);
 Route::get('/portfolio/{username}', [PortfolioController::class, 'portfolio']);

@@ -1,4 +1,4 @@
-<nav class="bg-gray-800/10 backdrop-blur-lg py-4 px-8 fixed top-0 left-0 right-0 z-50">
+<nav class= "py-4 px-8 fixed top-0 left-0 right-0 z-50" id="nav">
     <div class="container mx-auto">
         <div class="flex justify-between items-center">
             <!-- Logo -->
@@ -22,18 +22,20 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-4">
-                <a href="{{ route('dashboard') }}" class="text-white hover:text-gray-300">Dashboard</a>
-                <a href="{{ route('riwayat-pendidikan.index') }}" class="text-white hover:text-gray-300">Pendidikan</a>
-                <a href="{{ route('pengalaman.index') }}" class="text-white hover:text-gray-300">Pengalaman</a>
+                <a href="#home" class="text-white hover:text-gray-300">Home</a>
+                <a href="#tech-stack" class="text-white hover:text-gray-300">Stack</a>
+                <a href="#education" class="text-white hover:text-gray-300">Education</a>
+                <a href="#experience" class="text-white hover:text-gray-300">Experience</a>
             </div>
         </div>
 
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden mt-2">
             <div class="flex flex-col space-y-2">
-                <a href="{{ route('dashboard') }}" class="text-white hover:text-gray-300">Dashboard</a>
-                <a href="{{ route('riwayat-pendidikan.index') }}" class="text-white hover:text-gray-300">Pendidikan</a>
-                <a href="{{ route('pengalaman.index') }}" class="text-white hover:text-gray-300">Pengalaman</a>
+                <a href="#home" class="text-white hover:text-gray-300">Home</a>
+                <a href="#tech-stack" class="text-white hover:text-gray-300">Stack</a>
+                <a href="#education" class="text-white hover:text-gray-300">Education</a>
+                <a href="#experience" class="text-white hover:text-gray-300">Pengalaman</a>
             </div>
         </div>
     </div>
