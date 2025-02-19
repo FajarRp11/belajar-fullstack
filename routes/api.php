@@ -60,4 +60,6 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::get('/skills/user', [SkillsController::class, 'getSkills']);
     Route::post('/skills/store', [SkillsController::class, 'createSkills']);
     Route::get('/skills/edit/{id}', [SkillsController::class, 'getSingleSkills']);
+    Route::put('/skills/update/{id}', [SkillsController::class, 'updateSkills']);
+
 });
